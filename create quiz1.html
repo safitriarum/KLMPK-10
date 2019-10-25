@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>create quiz</title>
+<link rel="stylesheet" type="text/css" href="gaya guru.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <h2>Privearn</h2>
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a href="#"><h2>Halo Popo</h2></a></li>
+        <li><a href="grades guru.html"><h2>Grades</h2></a></li>
+        <li class="active"><a href="My courses Guru.html"><h2>My Courses</h2></a></li>        
+      </ul>
+    </div>
+    <div class="clear"></div>
+    <div class="badan">
+      <div class="panel">
+        <div class="kelas">
+          <h2>Kelas VII</h2>
+        </div>
+        <ul>
+          <li><a href="Biodata Siswa.html">Biodata Siswa</a></li>
+          <hr>
+          <li><a href="My courses Guru.html">Materi</a></li>
+          <hr>
+          <li class="active"><a href="create quiz1.html">Quiz</a></li>
+          <hr>
+          <li><a href="grades guru.html">Nilai</a></li>
+          <hr>       
+        </ul>
+      </div>
+      <div class="isinya">
+        <!-- <div class="materi"> -->
+          <form>
+          <label>Mata Pelajaran</label>
+          <br><br>
+          <select name="selectionField">
+            <option value="Bahasa Indonesia" >Bahasa Indonesia </option>
+            <option value="Matematika" >Matematika</option>
+            <option value="Bahasa Inggris" >Bahasa Inggris</option>
+            <option value="Fisika" >Fisika</option>
+            <option value="Biologi" >Biologi</option>
+            <option value="Kimia" >Kimia</option>
+            <option value="Ekonomi" >Ekonomi</option>
+            <option value="Geofrafi" >Geofrafi</option>
+            <option value="Sosiologi" >Sosiologi</option>
+          </select>
+          <br><br>
+          <label>Nama Quiz</label>
+          <br><br>
+          <input type="text" name="judul-materi" placeholder="Nama Quiz" style="height: 30px" size="120px">
+          <br><br>
+          <label>Maximum Grades</label>
+          <br><br>
+          <input type="text" name="nilai-maksimum" placeholder="Maximum Grades" style="height: 30px" size="120px">
+          <br><br>
+          <label>Time to Attempt</label>
+          <br><br>
+          <input type="text" name="waktu-maksimum" placeholder="Time to Attempt" style="height: 30px" size="120px">
+          <br><br>
+          <label>Description</label>
+          <br><br>
+          <textarea placeholder="detail materi" cols="122" rows="7">
+          </textarea>
+          <br><br>
+          <button class="button"><a href="create quiz2.html">Next</a></button>
+          <div class="clear"></div>
+          <br><br>
+          </form>
+        <!-- </div> -->
+      </div>
+    </div>  
+  </div>
+</body>
+</html>
