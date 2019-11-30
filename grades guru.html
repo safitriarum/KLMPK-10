@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Grades</title>
+	<link rel="stylesheet" type="text/css" href="gaya guru.css">
+</head>
+<body>
+<div class="wrap">
+    <div class="header">
+      <h2>Privearn</h2>
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a href="#"><h2>Halo Popo</h2></a></li>
+        <li class="active"><a href="grades 2.html"><h2>Grades</h2></a></li>
+        <li><a href="My Courses Guru.html"><h2>My Courses</h2></a></li>        
+      </ul>
+    </div>
+    <div class="clear"></div>
+    <div class="badan">
+      <div class="panel">
+        <div class="kelas">
+          <h2>Kelas VII</h2>
+        </div>
+        <ul>
+          <li><a href="Biodata Siswa.html">Biodata Siswa</a></li>
+          <hr>
+          <li><a href="My courses Guru.html">Materi</a></li>
+          <hr>
+          <li><a href="create quiz1.html">Quiz</a></li>
+          <hr>
+          <li class="active"><a href="grades guru.html">Nilai</a></li>
+          <hr>        
+        </ul>
+      </div>
+      <div class="isinya">
+        <!-- <div class="materi"> -->
+          <h4>Mata Pelajaran :
+          <select name="selectionField">
+            <option value="Bahasa Indonesia" >Bahasa Indonesia </option>
+            <option value="Matematika" >Matematika</option>
+            <option value="Bahasa Inggris" >Bahasa Inggris</option>
+            <option value="Fisika" >Fisika</option>
+            <option value="Biologi" >Biologi</option>
+            <option value="Kimia" >Kimia</option>
+            <option value="Ekonomi" >Ekonomi</option>
+            <option value="Geofrafi" >Geofrafi</option>
+            <option value="Sosiologi" >Sosiologi</option>
+          </select>
+          </h4>
+          <table style="background-color: white;"> 
+					
+				<tr>
+          <th>Nama</th>
+          <th>NIS</th>
+					<th>Tugas 1</th>
+					<th>Tugas 2</th>
+					<th>Tugas 3</th>
+					<th>UTS</th>
+					<th>Tugas 4</th>
+					<th>UAS</th>
+				</tr>
+          <td><input type="text" name="nama" id="nama" size="8"></td>
+          <td><input type="text" name="nis" id="nis" size="8" maxlength="6"></td>
+					<td><input type="grades" name="nilai" id="tugas1" size="8" maxlength="3"></td>
+					<td><input type="grades" name="nilai" id="tugas2" size="8" maxlength="3"></td>
+					<td><input type="grades" name="nilai" id="tugas3" size="8" maxlength="3"></td>
+					<td><input type="grades" name="nilai" id="uts" size="8" maxlength="3"></td>
+					<td><input type="grades" name="nilai" id="tugas4" size="8" maxlength="3"></td>
+					<td><input type="grades" name="nilai" id="uas" size="8" maxlength="3"></td>
+			</table> <br>
+			<button onclick="addHTMLTableRow();" style="margin-left: 93%; background-color: #05D80C; padding: 5px 20px; ">save</button>
+      <button onclick="editHtmlTbleSelectedRow();" style="margin-left: 93%; background-color: #05D80C; padding: 5px 20px; ">Edit</button>
+      <button onclick="removeSelectedRow();" style="margin-left: 93%; background-color: #05D80C; padding: 5px 20px; ">Hapus</button>
+        <!-- </div> -->
+      <table id="table" class="tab" border="1" style="margin-top: 3%; background-color: #fff">
+        <tr>
+          <th>Nama</th>
+          <th>NIS</th>
+          <th>Tugas 1</th>
+          <th>Tugas 2</th>
+          <th>Tugas 3</th>
+          <th>UTS</th>
+          <th>Tugas 4</th>
+          <th>UAS</th>
+        </tr>
+        <tr>
+          <td>Ersandy Pantek</td>
+          <td>13.256</td>
+          <td>80</td>
+          <td>80</td>
+          <td>80</td>
+          <td>80</td>
+          <td>80</td>
+          <td>80</td>
+        </tr>
+      </table>
+      </div>
+    </div>  
+  </div>
+
+  <script type="text/javascript">
+    var rIndex,
+        table = document.getElementById("table");
+    function checkEmptyInput(){
+      var isEmpty = false,
+          nama = document.getElementById("nama").value,
+          nis = document.getElementById("nis").value,
+          tugas1 = document.getElementById("tugas1").value,
+          tugas2 = document.getElementById("tugas2").value,
+          tugas3 = document.getElementById("tugas3").value,
+          uts = document.getElementById("uts").value,
+          tugas4 = document.getElementById("tugas4").value,
+          uas = document.getElementById("uas").value;
+      if(nama === ""){
+          alert("Harap Isi Nama Siswa");
+          isEmpty = true;
+        }
+      else if(nis === ""){
+          alert("Harap Isi Nomor Induk Siswa");
+          isEmpty = true;
+        }
+      else if(tugas1 === ""){
+          alert("Harap Isi Nilai Tugas 1");
+          isEmpty = true;
+        }
+      else if(tugas2 === ""){
+          alert("Harap Isi Nilai Tugas 2");
+          isEmpty = true;
+        }
+      else if(tugas3 === ""){
+          alert("Harap Isi Nilai Tugas 3");
+          isEmpty = true;
+        }
+      else if(uts === ""){
+          alert("Harap Isi Nilai UTS");
+          isEmpty = true;
+        }
+      else if(tugas4 === ""){
+          alert("Harap Isi Nilai Tugas 4");
+          isEmpty = true;
+        }
+      else if(uas === ""){
+          alert("Harap Isi Nilai UAS");
+          isEmpty = true;
+        }
+      return isEmpty;
+    }
+    
+    function addHTMLTableRow(){
+      if(!checkEmptyInput()){
+        var newRow = table.insertRow(table.length),
+          cell1 = newRow.insertCell(0),
+          cell2 = newRow.insertCell(1),
+          cell3 = newRow.insertCell(2),
+          cell4 = newRow.insertCell(3),
+          cell5 = newRow.insertCell(4),
+          cell6 = newRow.insertCell(5),
+          cell7 = newRow.insertCell(6),
+          cell8 = newRow.insertCell(7),
+          nama = document.getElementById("nama").value,
+          nis = document.getElementById("nis").value,
+          tugas1 = document.getElementById("tugas1").value,
+          tugas2 = document.getElementById("tugas2").value,
+          tugas3 = document.getElementById("tugas3").value,
+          uts = document.getElementById("uts").value,
+          tugas4 = document.getElementById("tugas4").value,
+          uas = document.getElementById("uas").value;
+
+          cell1.innerHTML = nama;
+          cell2.innerHTML = nis;
+          cell3.innerHTML = tugas1;
+          cell4.innerHTML = tugas2;
+          cell5.innerHTML = tugas3;
+          cell6.innerHTML = uts;
+          cell7.innerHTML = tugas4;
+          cell8.innerHTML = uas;
+        
+          selectedRowToInput();
+        }
+    }
+
+    function selectedRowToInput()
+            {
+                
+                for(var i = 1; i < table.rows.length; i++)
+                {
+                    table.rows[i].onclick = function()
+                    {
+                      // get the seected row index
+                      rIndex = this.rowIndex;
+                      document.getElementById("nama").value = this.cells[0].innerHTML;
+                      document.getElementById("nis").value = this.cells[1].innerHTML;
+                      document.getElementById("tugas1").value = this.cells[2].innerHTML;
+                      document.getElementById("tugas2").value = this.cells[3].innerHTML;
+                      document.getElementById("tugas3").value = this.cells[4].innerHTML;
+                      document.getElementById("uts").value = this.cells[5].innerHTML;
+                      document.getElementById("tugas4").value = this.cells[6].innerHTML;
+                      document.getElementById("uas").value = this.cells[7].innerHTML;
+                    };
+                }
+            }
+            selectedRowToInput();
+            
+            function editHtmlTbleSelectedRow()
+            {
+                var nama = document.getElementById("nama").value,
+                nis = document.getElementById("nis").value,
+                tugas1 = document.getElementById("tugas1").value,
+                tugas2 = document.getElementById("tugas2").value,
+                tugas3 = document.getElementById("tugas3").value,
+                uts = document.getElementById("uts").value,
+                tugas4 = document.getElementById("tugas4").value,
+                uas = document.getElementById("uas").value;   
+              
+              if(!checkEmptyInput()){
+                table.rows[rIndex].cells[0].innerHTML = nama;
+                table.rows[rIndex].cells[1].innerHTML = nis;
+                table.rows[rIndex].cells[2].innerHTML = tugas1;
+                table.rows[rIndex].cells[3].innerHTML = tugas2;
+                table.rows[rIndex].cells[4].innerHTML = tugas3;
+                table.rows[rIndex].cells[5].innerHTML = uts;
+                table.rows[rIndex].cells[6].innerHTML = tugas4;
+                table.rows[rIndex].cells[7].innerHTML = uas;
+              }
+            }
+
+            function removeSelectedRow()
+            {
+                table.deleteRow(rIndex);
+                // clear input text
+                document.getElementById("nama").value = "";
+                document.getElementById("nis").value = "";
+                document.getElementById("tugas1").value = "";
+                document.getElementById("tugas2").value = "";
+                document.getElementById("tugas3").value = "";
+                document.getElementById("uts").value = "";
+                document.getElementById("tugas4").value = "";
+                document.getElementById("uas").value = "";
+            }
+
+  </script>
+</body>
+</html>
