@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>create quiz</title>
+  <link rel="stylesheet" type="text/css" href="css/gaya guru.css">
+  <script type="text/javascript" src="jquery.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/gaya.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
+  <script>
+        function validate(){
+            var judul = document.getElementById("judul");
+            var nilai = document.getElementById("nilai");
+            var waktu = document.getElementById("waktu");
+            var detail = document.getElementById("detail");
+
+            if(judul.value == "" || nilai.value == "" || waktu.value == "" || detail.value == ""){
+                alert("Tidak Boleh Ada Data Yang Kosong!");
+                return false;
+            }
+            else if(nilai.value.length > 3){
+                alert("Maximum grades Tidak Boleh Melebihi 100!");
+                return false;
+            }
+            else{
+                true;
+            }
+        }
+  </script>
+</head>
+<body>
+  <div id="modallogout" class="modal">
+    <p>Are you sure to Logout?</p>
+    <a href="index.html">Yes</a>
+  </div>
+  <div class="wrap">
+    <div class="header">
+      <h2>Privearn</h2>
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a href="#modallogout" rel="modal:open"><h2>Halo Popo</h2></a></li>
+        <li><a href="grades guru.html"><h2>Grades</h2></a></li>
+        <li class="active"><a href="My courses Guru.html"><h2>My Courses</h2></a></li>        
+      </ul>
+    </div>
+    <div class="clear"></div>
+    <div class="badan">
+      <div class="panel">
+        <div class="kelas">
+          <h2>Kelas VII</h2>
+        </div>
+        <ul>
+          <li><a href="Biodata Siswa.html">Biodata Siswa</a></li>
+          <hr>
+          <li><a href="My courses Guru.html">Materi</a></li>
+          <hr>
+          <li class="active"><a href="create quiz1.html">Quiz</a></li>
+          <hr>
+          <li><a href="grades guru.html">Nilai</a></li>
+          <hr>       
+        </ul>
+      </div>
+      <div class="isinya">
+        <!-- <div class="materi"> -->
+          <form onsubmit="return validate()" action="create quiz2.html">
+          <label>Mata Pelajaran</label>
+          <br><br>
+          <select name="selectionField">
+            <option value="Bahasa Indonesia" >Bahasa Indonesia </option>
+            <option value="Matematika" >Matematika</option>
+            <option value="Bahasa Inggris" >Bahasa Inggris</option>
+            <option value="Fisika" >Fisika</option>
+            <option value="Biologi" >Biologi</option>
+            <option value="Kimia" >Kimia</option>
+            <option value="Ekonomi" >Ekonomi</option>
+            <option value="Geofrafi" >Geofrafi</option>
+            <option value="Sosiologi" >Sosiologi</option>
+          </select>
+          <br><br>
+          <label>Nama Quiz</label>
+          <br><br>
+          <input id="judul" type="text" name="judul-materi" placeholder="Nama Quiz" style="height: 30px" size="120px">
+          <br><br>
+          <label>Maximum Grades</label>
+          <br><br>
+          <input id="nilai" type="text" name="nilai-maksimum" placeholder="Maximum Grades" style="height: 30px" size="120px">
+          <br><br>
+          <label>Time to Attempt</label>
+          <br><br>
+          <input id="waktu" type="text" name="waktu-maksimum" placeholder="Time to Attempt" style="height: 30px" size="120px">
+          <br><br>
+          <label>Description</label>
+          <br><br>
+          <textarea id="detail" placeholder="detail materi" cols="122" rows="7">
+          </textarea>
+          <br><br>
+          <button onclick="validate()" class="button">Next</button>
+          <div class="clear"></div>
+          <br><br>
+          </form>
+        <!-- </div> -->
+      </div>
+    </div>  
+  </div>
+</body>
+</html>
