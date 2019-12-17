@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Grades</title>
+	<script type="text/javascript" src="jquery.js"></script> <!--wajib dipanggil-->
+  <link rel="stylesheet" type="text/css" href="css/gaya.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script> <!--wajib dipanggil-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" /><!--wajib dipanggil-->
+</head>
+<body>
+  <!-- isi modalnya ini -->
+  <div id="modallogout" class="modal">
+  <p>Are you sure to Logout?</p>
+  <a href="index.html">Yes</a>
+</div>
+<!-- sampe sini modalnya-->
+<div class="wrap">
+    <div class="header">
+      <h2>Privearn</h2>
+    </div>
+    <div class="menu">
+      <ul>
+        <!-- ini manggil modal pake id-->
+        <li><a href="#modallogout" rel="modal:open"><h2>Halo Yeni</h2></a></li>
+        <li class="active"><a href="grades 2.html"><h2>Grades</h2></a></li>
+        <li><a href="library.html"><h2>e-Library</h2></a></li>
+        <li><a href="my courses.html"><h2>My Courses</h2></a></li>        
+      </ul>
+    </div>
+    <div class="clear"></div>
+    <div class="badan">
+      <div class="panel">
+        <div class="kelas">
+          <h2>Kelas VII</h2>
+        </div>
+        <ul>
+          <li><a href="#">Keseluruhan</a></li>
+          <hr>
+          <li class="active"><a href="#">Bahasa Indonesia</a></li>
+          <hr>
+          <li><a href="#">Matematika</a></li>
+          <hr>
+          <li><a href="#">Bahasa Inggris</a></li>
+          <hr>
+          <li><a href="#">Fisika</a></li>
+          <hr>
+          <li><a href="#">Biologi</a></li>
+          <hr>        
+          <li><a href="#">Kimia</a></li>
+          <hr>        
+          <li><a href="#">Ekonomi</a></li>
+          <hr>        
+          <li><a href="#">Geofrafi</a></li>
+          <hr>        
+          <li><a href="#">Sosiologi</a></li>        
+        </ul>
+      </div>
+      <div class="isinya">
+        <!-- <div class="materi"> -->
+          <h3>Bahasa Indonesia</h3>
+          <p id="pesan" style="color: green"></p>
+          <table>
+					
+				<tr>
+					<th>Tugas 1</th>
+					<th>Tugas 2</th>
+					<th>Tugas 3</th>
+					<th>UTS</th>
+					<th>Tugas 4</th>
+					<th>UAS</th>
+					<th>Rata-Rata</th>
+				</tr>
+					<td>80</td>
+					<td>80</td>
+					<td>80</td>
+					<td>80</td>
+					<td>80</td>
+					<td>80</td>
+					<td>80</td>
+			</table> <br>
+			<button style="margin-left: 800px; background-color: #05D80C; padding: 5px 20px;" onclick="konfirmasi()">Cetak</button>
+        <!-- </div> -->
+      </div>
+    </div>  
+  </div>
+
+  <script type="text/javascript">
+    function konfirmasi(){
+         var tanya = confirm("Apakah Anda Akan Mencetak Nilai ?");
+ 
+         if(tanya === true) {
+            pesan = "Nilai Berhasil Dicetak !";
+         }else{
+            pesan = "Nilai Batal Dicetak !";
+         }
+ 
+         document.getElementById("pesan").innerHTML = pesan;
+      }
+  </script>
+
+</body>
+</html>
