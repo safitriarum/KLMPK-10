@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/admin.css">
+	<title>Kelola_Data_Pengajar</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <script>
+    $(document).ready(function(){
+      $("#inputan").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#bodimu #rownya").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+    </script>
+</head>
+<body>
+	<div id="modallogout" class="modal">
+		<p>Are you sure to Logout?</p>
+	  	<a href="index.html">Yes</a>
+	</div>
+	<div class="wrap">
+		<div class="panel">
+			<div class="admin">
+				<img src="img/user.png" style="width: 100px; height: 100px; margin-left:18%;">
+		        <h2 style="margin-left:25%; margin-top: 0px;  font-family: Segoe UI;">Admin</h2>
+		    </div>
+		    <ul>
+		    	<li><a href="dashboard.html">Dashboard</a></li>
+		        <hr>
+		    	<li class="active"><a href="kelola data pengajar.html">Kelola Data Pengajar</a></li>
+		        <hr>
+		        <li><a href="kelola data siswa.html">Kelola Data Siswa</a></li>
+		        <hr>
+		        <li><a href="kelola data pelajaran.html">Kelola Data Pelajaran</a></li>
+		        <hr>
+		        <li><a href="#">Kelola e-Library</a></li>     
+		    </ul>
+		</div>
+		<div class="content">
+			<h2 class="data">Data Pengajar</h2>
+			<div class="menu">
+				<ul>
+					<li><a href="#modallogout" rel="modal:open"><h2 style="font-family: Segoe UI;">Log Out</h2></a></li>
+				</ul>
+			</div>
+			<br><br><br>
+			<div class="isi">
+				<button class="tambah_data"><a href="tambah data pengajar.html">Tambah Data</a></button>
+				<div class="search">
+				Search:<input id="inputan" type="text" placeholder="Cari Data">
+				</div>
+				<br><br><br>
+				<table class="tabel">
+					<tr>
+						<th>Nama</th>
+						<th>Alamat</th>
+						<th>Umur</th>
+						<th>Bidang Ajar</th>
+						<th>Jenis Kelamin</th>
+						<th>Action</th>
+					</tr>
+					<tbody id="bodimu">
+					<tr id="rownya">
+						<td>Yosha Mahatma Indra</td>
+						<td>Jl. Kenangan</td>
+						<td>26</td>
+						<td>Bahasa Indonesia, Matematika, Fisika</td>
+						<td>L</td>
+						<td>
+							<button class="button1"><a href="detail data pengajar.html">Detail</a></button> 
+							<button class="button2"><a href="edit data pengajar.html">Edit</a></button>
+							<button class="button3"><a href="#">Delete</a></button>
+						</td>
+					</tr>
+					<tr id="rownya">
+						<td>Villa Selvia</td>
+						<td>Jl. Maju</td>
+						<td>26</td>
+						<td>Biologi, Kimia, Fisika</td>
+						<td>L</td>
+						<td>
+							<button class="button1"><a href="detail data pengajar.html">Detail</a></button> 
+							<button class="button2"><a href="edit data pengajar.html">Edit</a></button>
+							<button class="button3"><a href="#">Delete</a></button>
+						</td>
+					</tr>
+					<tr id="rownya">
+						<td>Aji Cendika Siwi</td>
+						<td>Jl. Mundur</td>
+						<td>26</td>
+						<td>Geografi, Sosiologi </td>
+						<td>L</td>
+						<td>
+							<button class="button1"><a href="detail data pengajar.html">Detail</a></button> 
+							<button class="button2"><a href="edit data pengajar.html">Edit</a></button>
+							<button class="button3"><a href="#">Delete</a></button>
+						</td>
+					</tr>
+					<tr id="rownya">
+						<td>Tedy Dani Kusuma</td>
+						<td>Jl. Bunga</td>
+						<td>26</td>
+						<td>Bahasa Inggris,Ekonomi </td>
+						<td>L</td>
+						<td>
+							<button class="button1"><a href="detail data pengajar.html">Detail</a></button> 
+							<button class="button2"><a href="edit data pengajar.html">Edit</a></button>
+							<button class="button3"><a href="#">Delete</a></button>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+				
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

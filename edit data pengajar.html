@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/admin.css">
+	<title>Edit Data Pengajar</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+</head>
+<body>
+	<div id="modallogout" class="modal">
+	  <p>Are you sure to Logout?</p>
+	  <a href="index.html">Yes</a>
+	</div>
+	<div class="wrap">
+		<div class="panel">
+			<div class="admin">
+				<img src="img/user.png" style="width: 100px; height: 100px; margin-left:18%;">
+		        <h2 style="margin-left:25%; margin-top: 0px;  font-family: Segoe UI;">Admin</h2>
+		    </div>
+		    <ul>
+		    	<li><a href="dashboard.html">Dashboard</a></li>
+		        <hr>
+		    	<li class="active"><a href="kelola data pengajar.html">Kelola Data Pengajar</a></li>
+		        <hr>
+		        <li><a href="kelola data siswa.html">Kelola Data Siswa</a></li>
+		        <hr>
+		        <li><a href="kelola data pelajaran.html">Kelola Data Pelajaran</a></li>
+		        <hr>
+		        <li><a href="#">Kelola e-Library</a></li>     
+		    </ul>
+		</div>
+		<div class="content">
+			<h2 class="data">Edit Data Pengajar</h2>
+			<div class="menu">
+				<ul>
+					<li><a href="#modallogout" rel="modal:open"><h2 style="font-family: Segoe UI;">Log Out</h2></a></li>
+				</ul>
+			</div>
+			<br><br><br>
+			<div class="kotak">
+				<img src="img/user.png" style="margin-left: 8%; "><br>
+				<br><br><br>
+				<div class="kiri">
+					<input type="text" value="Villa Selvia"><br><br>
+					<input type="text" value="Fisika"><br><br>
+					<input type="text" value="villA110"><br><br>
+					<input type="text" value="Nganjuk"><br><br>
+					<td><input type="text" value="11/09/1994"><br><br>
+				</div>
+				<div class="kanan">
+					Jenis Kelamin <input type="radio" name="j">L <input type="radio" name="j">P <br><br>
+					<select class="agama">
+						<option>Agama</option>
+						<option>Islam</option>
+						<option>Kristen</option>
+						<option>Hindu</option>
+						<option>Budha</option>
+					</select><br><br>
+					<input type="text" value="Nganjuk"><br><br>
+					<input type="text" value="082312345678"><br><br>
+					<input type="email" value="villa_selvia11@gmail.com">
+				</div>
+				<button class="update2">Update</button>
+				<button class="cancel2">Cancel</button>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>
